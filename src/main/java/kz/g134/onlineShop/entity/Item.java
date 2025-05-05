@@ -38,7 +38,7 @@ public class Item extends BaseClass {
     private Brand brand;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gender_id", nullable = false)
+    @JoinColumn(name = "gender_id")
     private Gender gender;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -47,5 +47,5 @@ public class Item extends BaseClass {
             joinColumns = @JoinColumn(name = "item_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    private List<Category> category;
+    private List<Category> categories;
 }
