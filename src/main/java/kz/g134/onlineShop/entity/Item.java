@@ -43,7 +43,7 @@ public class Item extends BaseClass {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "items_categories",
+            name = "item_categories",
             joinColumns = @JoinColumn(name = "item_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )

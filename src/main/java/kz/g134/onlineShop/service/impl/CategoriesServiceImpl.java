@@ -23,6 +23,11 @@ public class CategoriesServiceImpl implements CategoriesService {
     private final ItemRepository itemRepository;
 
     @Override
+    public List<Category> getAll() {
+        return categoryRepository.findAll();
+    }
+
+    @Override
     public Void addCategory(CategoryAddDTO dto) {
         Item item = itemService.getById(dto.getItemId());
         for (Long id : dto.getCategoriesId()) {

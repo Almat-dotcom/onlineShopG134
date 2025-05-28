@@ -17,12 +17,4 @@ import java.util.List;
 public class Category extends BaseClass {
     @Column(name = "name", nullable = false)
     private String name;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "items_categories",
-            joinColumns = @JoinColumn(name = "category_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id")
-    )
-    private List<Item> items;
 }

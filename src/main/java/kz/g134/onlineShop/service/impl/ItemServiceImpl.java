@@ -33,13 +33,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public Void createItem(ItemRequestDTO dto) {
-        try {
             itemRepository.save(itemMapper.toItem(dto));
             log.info("Item created");
-        } catch (Exception e) {
-            log.error("Item create error reason: " + e.getMessage());
-        }
-        return null;
+            return null;
     }
 
     @Override
